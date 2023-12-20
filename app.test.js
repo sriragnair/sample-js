@@ -3,12 +3,10 @@ const supertest = require('supertest');
 const request = supertest(app);
 let server;
 
-// Start server before all tests
 beforeAll((done) => {
-  server = app.listen(4000, done); // Choose a test port
+  server = app.listen(4000, done);
 });
 
-// Close server after all tests
 afterAll((done) => {
   server.close(done);
 });
