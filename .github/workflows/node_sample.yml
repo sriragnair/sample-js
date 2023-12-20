@@ -24,12 +24,12 @@ jobs:
     - run: npm run build --if-present
     - run: npm test
 
-deploy:
+  deploy:
     needs: build-and-test
     runs-on: ubuntu-latest
     if: github.ref == 'refs/heads/main'
     steps:
-    - uses: actions/checkout@v2
-    # We will add deployment steps here
-    - name: Deploy
-        run: echo "Deploying to server..."
+        - uses: actions/checkout@v2
+        # We will add deployment steps here
+        - name: Deploy
+          run: echo "Deploying to server..."
